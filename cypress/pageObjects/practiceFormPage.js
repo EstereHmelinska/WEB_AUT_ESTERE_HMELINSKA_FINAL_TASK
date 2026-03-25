@@ -22,17 +22,14 @@ export class PracticeFormPage extends BasePage {
   static get clickDateField() {
     return cy.get("#dateOfBirthInput");
   }
-  static get selectYear() {
-    return cy.get(".react-datepicker__year-select");
-  }
-  static get selectMonth() {
-    return cy.get(".react-datepicker__month-select");
-  }
-  static get selectDay() {
-    return cy.contains(
+  static setDate(day, month, year) {
+    cy.get(".react-datepicker__year-select").select(year);
+    cy.get(".react-datepicker__month-select").select(month);
+
+    cy.contains(
       ".react-datepicker__day:not(.react-datepicker__day--outside-month)",
-      /^28$/,
-    );
+      new RegExp(`^${day}$`),
+    ).click();
   }
   static get setSubjects() {
     return cy.get("#subjectsInput");

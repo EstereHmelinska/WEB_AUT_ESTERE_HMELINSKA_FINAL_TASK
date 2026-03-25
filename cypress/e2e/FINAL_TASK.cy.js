@@ -14,9 +14,7 @@ describe("Final Task specs", () => {
     PracticeFormPage.genderRadioBtn.click();
     PracticeFormPage.userNumber.type(phoneNumber);
     PracticeFormPage.clickDateField.click();
-    PracticeFormPage.selectYear.select("1930");
-    PracticeFormPage.selectMonth.select("February");
-    PracticeFormPage.selectDay.click();
+    PracticeFormPage.setDate("28", "February", "1930");
     PracticeFormPage.setSubjects.type("Economics{enter}");
     PracticeFormPage.setHobbies.click();
     PracticeFormPage.uploadPicture.selectFile(pic);
